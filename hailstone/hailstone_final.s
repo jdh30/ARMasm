@@ -45,9 +45,8 @@ loopstart:
         cmpeq   r1, #0
         bne     loopend
         ldr     r0, .Print
-#        ldr     r1, .arg
-        mov     r1, r3
-        mov     r2, r4
+        ldr     r1, .arg
+        mov     r2, r3
         bl      printf
         mov     r0, #0
         pop     {r4, r5, r6, r7, r8, r9, pc}
@@ -56,4 +55,4 @@ loopstart:
 .Print:
         .word   .LC0
 .LC0:
-        .ascii  "hailstone(d) = %lld\012\000"
+        .ascii  "hailstone(%d) = %d\012\000"
